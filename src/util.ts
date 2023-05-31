@@ -1,13 +1,13 @@
 import * as child_process from "child_process";
 import {
   accessSync,
-  chmodSync,
   constants as fs_constants,
   existsSync,
   mkdirSync,
   promises as fs,
   readFileSync,
   writeFileSync,
+  unlinkSync,
 } from "fs";
 import * as path from "path";
 import * as Case from "case";
@@ -101,13 +101,13 @@ export function writeFile(
   options: WriteFileOptions = {}
 ) {
   if (existsSync(filePath)) {
-    chmodSync(filePath, "600");
+    unlinkSync(filePath);
   }
 
   mkdirSync(path.dirname(filePath), { recursive: true });
-  writeFileSync(filePath, data);
-
-  chmodSync(filePath, getFilePermissions(options));
+  writeFileSync(filePath, data, {
+    mode: getFilePermissions(options),
+  });
 }
 
 /**
