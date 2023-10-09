@@ -503,6 +503,8 @@ Name|Description
 
 Represents a project component.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -510,10 +512,11 @@ Represents a project component.
 
 
 ```ts
-new Component(project: Project)
+new Component(project: Project, id?: string)
 ```
 
 * **project** (<code>[Project](#projen-project)</code>)  *No description*
+* **id** (<code>string</code>)  *No description*
 
 
 
@@ -574,6 +577,7 @@ The `Dependencies` component is responsible to track the list of dependencies a 
 To add a dependency you can use a project-type specific API such as
 `nodeProject.addDeps()` or use the generic API of `project.deps`:
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -731,6 +735,7 @@ __Returns__:
 
 Create a docker-compose YAML file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -1022,6 +1027,7 @@ addVolume(volume: IDockerComposeVolumeBinding): void
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 __Implemented by__: [github.PullRequestTemplate](#projen-github-pullrequesttemplate), [python.RequirementsFile](#projen-python-requirementsfile), [python.SetupPy](#projen-python-setuppy), [web.ReactTypeDef](#projen-web-reacttypedef), [GitAttributesFile](#projen-gitattributesfile), [IgnoreFile](#projen-ignorefile), [IniFile](#projen-inifile), [JsonFile](#projen-jsonfile), [License](#projen-license), [Makefile](#projen-makefile), [TextFile](#projen-textfile), [TomlFile](#projen-tomlfile), [XmlFile](#projen-xmlfile), [YamlFile](#projen-yamlfile)
 __Obtainable from__: [Project](#projen-project).[tryFindFile](#projen-project#projen-project-tryfindfile)(), [Project](#projen-project).[tryRemoveFile](#projen-project#projen-project-tryremovefile)()
@@ -1092,6 +1098,7 @@ __Returns__:
 
 Assign attributes to file names in a git repository.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [FileBase](#projen-filebase)
 
 ### Initializer
@@ -1163,7 +1170,7 @@ __Returns__:
 
 The Gitpod component which emits .gitpod.yml.
 
-__Implements__: [IDevEnvironment](#projen-idevenvironment)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [IDevEnvironment](#projen-idevenvironment)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -1302,6 +1309,7 @@ addVscodeExtensions(...extensions: string[]): void
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [FileBase](#projen-filebase)
 
 ### Initializer
@@ -1412,6 +1420,7 @@ __Returns__:
 
 Represents an INI file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [ObjectFile](#projen-objectfile)
 
 ### Initializer
@@ -1457,6 +1466,7 @@ __Returns__:
 
 Represents a JSON file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [ObjectFile](#projen-objectfile)
 
 ### Initializer
@@ -1639,6 +1649,7 @@ __Returns__:
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [FileBase](#projen-filebase)
 
 ### Initializer
@@ -1679,6 +1690,7 @@ __Returns__:
 
 Project-level logging utilities.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -1787,6 +1799,7 @@ warn(...text: any[]): void
 
 Minimal Makefile.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [FileBase](#projen-filebase)
 
 ### Initializer
@@ -1900,6 +1913,7 @@ __Returns__:
 
 Represents an Object file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [FileBase](#projen-filebase)
 __Implemented by__: [IniFile](#projen-inifile), [JsonFile](#projen-jsonfile), [TomlFile](#projen-tomlfile), [XmlFile](#projen-xmlfile), [YamlFile](#projen-yamlfile)
 __Obtainable from__: [Project](#projen-project).[tryFindObjectFile](#projen-project#projen-project-tryfindobjectfile)()
@@ -2090,6 +2104,8 @@ __Returns__:
 
 Base project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -2390,6 +2406,7 @@ Build spawns these tasks in order:
 5. test
 6. package
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -2463,6 +2480,7 @@ static createProject(options: CreateProjectOptions): void
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [ProjenrcJson](#projen-projenrcjson)
 
 ### Initializer
@@ -2485,6 +2503,7 @@ new Projenrc(project: Project, options?: ProjenrcJsonOptions)
 
 A component representing the projen runtime configuration.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 __Implemented by__: [java.Projenrc](#projen-java-projenrc), [javascript.Projenrc](#projen-javascript-projenrc), [python.Projenrc](#projen-python-projenrc), [typescript.Projenrc](#projen-typescript-projenrc), [typescript.ProjenrcTs](#projen-typescript-projenrcts), [Projenrc](#projen-projenrc), [ProjenrcJson](#projen-projenrcjson)
 
@@ -2494,10 +2513,11 @@ __Implemented by__: [java.Projenrc](#projen-java-projenrc), [javascript.Projenrc
 
 
 ```ts
-new ProjenrcFile(project: Project)
+new ProjenrcFile(project: Project, id?: string)
 ```
 
 * **project** (<code>[Project](#projen-project)</code>)  *No description*
+* **id** (<code>string</code>)  *No description*
 
 
 
@@ -2530,6 +2550,7 @@ __Returns__:
 
 Sets up a project to use JSON for projenrc.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [ProjenrcFile](#projen-projenrcfile)
 
 ### Initializer
@@ -2644,6 +2665,7 @@ Defines renovatebot configuration for projen project.
 
 Ignores the versions controlled by Projen.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -2681,6 +2703,7 @@ Renders the given files into the directory if the directory does not exist.
 
 Use this to create sample code files
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -2722,6 +2745,7 @@ Produces a file with the given contents but only once, if the file doesn't alrea
 
 Use this for creating example code files or other resources.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -2761,6 +2785,7 @@ synthesize(): void
 
 Represents a README.md sample file. You are expected to manage this file after creation.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [SampleFile](#projen-samplefile)
 
 ### Initializer
@@ -2874,6 +2899,7 @@ __Returns__:
 
 Represents a source file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -3279,6 +3305,7 @@ Defines project tasks.
 Tasks extend the projen CLI by adding subcommands to it. Task definitions are
 synthesized into `.projen/tasks.json`.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -3413,6 +3440,7 @@ __Returns__:
 
 A text file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [FileBase](#projen-filebase)
 
 ### Initializer
@@ -3470,6 +3498,7 @@ __Returns__:
 
 Represents a TOML file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [ObjectFile](#projen-objectfile)
 
 ### Initializer
@@ -3515,6 +3544,7 @@ __Returns__:
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [Component](#projen-component)
 
 ### Initializer
@@ -3556,6 +3586,7 @@ Represents an XML file.
 
 Objects passed in will be synthesized using the npm "xml" library.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [ObjectFile](#projen-objectfile)
 
 ### Initializer
@@ -3601,6 +3632,7 @@ __Returns__:
 
 Represents a YAML file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Extends__: [ObjectFile](#projen-objectfile)
 
 ### Initializer
@@ -3655,6 +3687,7 @@ __Returns__:
 
 Discovers and creates integration tests and lambdas from code in the project's source and test trees.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [Component](#projen-component)
@@ -3693,6 +3726,7 @@ A multi-language (jsii) construct library which vends constructs designed to
 use within the AWS CDK with a friendly workflow and automatic publishing to
 the construct catalog.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [cdk.ConstructLibrary](#projen-cdk-constructlibrary)
@@ -3927,6 +3961,7 @@ addCdkTestDependencies(...deps: string[]): void
 
 Manages dependencies on the AWS CDK.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [Component](#projen-component)
@@ -4032,6 +4067,7 @@ __Returns__:
 
 Manages dependencies on the AWS CDK for Java projects.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [awscdk.AwsCdkDeps](#projen-awscdk-awscdkdeps)
@@ -4079,6 +4115,7 @@ __Returns__:
 
 Manages dependencies on the AWS CDK for Node.js projects.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [awscdk.AwsCdkDeps](#projen-awscdk-awscdkdeps)
@@ -4126,6 +4163,7 @@ __Returns__:
 
 Manages dependencies on the AWS CDK for Python projects.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [awscdk.AwsCdkDeps](#projen-awscdk-awscdkdeps)
@@ -4173,6 +4211,7 @@ __Returns__:
 
 AWS CDK app in Java.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [java.JavaProject](#projen-java-javaproject)
@@ -4286,6 +4325,7 @@ addCdkDependency(...modules: string[]): void
 
 AWS CDK app in Python.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [python.PythonProject](#projen-python-pythonproject)
@@ -4395,6 +4435,7 @@ Name | Type | Description
 
 AWS CDK app in TypeScript.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [typescript.TypeScriptAppProject](#projen-typescript-typescriptappproject)
@@ -4607,6 +4648,7 @@ addCdkDependency(...modules: string[]): void
 
 Represents cdk.json file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [Component](#projen-component)
@@ -4678,6 +4720,7 @@ addIncludes(...patterns: string[]): void
 
 Adds standard AWS CDK tasks to your project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [Component](#projen-component)
@@ -4713,6 +4756,7 @@ Name | Type | Description
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [awscdk.AwsCdkConstructLibrary](#projen-awscdk-awscdkconstructlibrary)
@@ -4906,6 +4950,7 @@ new awscdk.ConstructLibraryAws(options: AwsCdkConstructLibraryOptions)
 
 Creates edge lambdas from entry points discovered in the project's source tree.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [cdk.AutoDiscoverBase](#projen-cdk-autodiscoverbase)
@@ -4933,6 +4978,7 @@ new awscdk.EdgeLambdaAutoDiscover(project: Project, options: EdgeLambdaAutoDisco
 
 Cloud integration tests.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [cdk.IntegrationTestBase](#projen-cdk-integrationtestbase)
@@ -4972,6 +5018,7 @@ Name | Type | Description
 
 Creates integration tests from entry points discovered in the test tree.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [cdk.IntegrationTestAutoDiscoverBase](#projen-cdk-integrationtestautodiscoverbase)
@@ -4999,6 +5046,7 @@ new awscdk.IntegrationTestAutoDiscover(project: Project, options: IntegrationTes
 
 Creates lambdas from entry points discovered in the project's source tree.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [cdk.AutoDiscoverBase](#projen-cdk-autodiscoverbase)
@@ -5026,6 +5074,7 @@ new awscdk.LambdaAutoDiscover(project: Project, options: LambdaAutoDiscoverOptio
 
 Create a Lambda Extension.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [Component](#projen-component)
@@ -5056,6 +5105,7 @@ new awscdk.LambdaExtension(project: Project, options: LambdaExtensionOptions)
 
 Creates Lambda Extensions from entrypoints discovered in the project's source tree.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [cdk.AutoDiscoverBase](#projen-cdk-autodiscoverbase)
@@ -5093,6 +5143,7 @@ file `src/foo-function.ts` with a custom AWS construct called `FooFunction`
 which extends `@aws-cdk/aws-lambda.Function` which is bound to the bundled
 handle through an asset.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: awscdk
 
 __Extends__: [Component](#projen-component)
@@ -5164,6 +5215,7 @@ Name | Type | Description
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: build
 
 __Extends__: [Component](#projen-component)
@@ -5318,6 +5370,7 @@ addPostBuildSteps(...steps: JobStep[]): void
 
 Base class for auto-discovering and creating project subcomponents.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk
 
 __Extends__: [Component](#projen-component)
@@ -5352,6 +5405,7 @@ Name | Type | Description
 
 A multi-language library for CDK constructs.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk
 
 __Extends__: [cdk.JsiiProject](#projen-cdk-jsiiproject)
@@ -5532,6 +5586,7 @@ new cdk.ConstructLibrary(options: ConstructLibraryOptions)
 
 Base class for locating integration tests in the project's test tree.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk
 
 __Extends__: [cdk.AutoDiscoverBase](#projen-cdk-autodiscoverbase)
@@ -5556,6 +5611,7 @@ new cdk.IntegrationTestAutoDiscoverBase(project: Project, options: IntegrationTe
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk
 
 __Extends__: [Component](#projen-component)
@@ -5619,6 +5675,7 @@ new cdk.JsiiDocgen(project: JsiiProject, options?: JsiiDocgenOptions)
 
 Multi-language jsii library project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk
 
 __Extends__: [typescript.TypeScriptProject](#projen-typescript-typescriptproject)
@@ -5805,6 +5862,7 @@ Name | Type | Description
 
 Automatically discovers and creates `IntegrationTest`s from entry points found in the test tree.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk8s
 
 __Extends__: [Component](#projen-component)
@@ -5831,6 +5889,7 @@ new cdk8s.AutoDiscover(project: Project, options: AutoDiscoverOptions)
 
 Manages dependencies on the CDK8s.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk8s
 
 __Extends__: [Component](#projen-component)
@@ -5892,6 +5951,7 @@ __Returns__:
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk8s
 
 __Extends__: [cdk8s.Cdk8sDeps](#projen-cdk8s-cdk8sdeps)
@@ -5942,6 +6002,7 @@ __Returns__:
 
 CDK8s app in Python.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk8s
 
 __Extends__: [python.PythonProject](#projen-python-pythonproject)
@@ -6043,6 +6104,7 @@ Name | Type | Description
 
 CDK8s app in TypeScript.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk8s
 
 __Extends__: [typescript.TypeScriptAppProject](#projen-typescript-typescriptappproject)
@@ -6232,6 +6294,7 @@ A multi-language (jsii) construct library which vends constructs designed to
 use within the CDK for Kubernetes (CDK8s), with a friendly workflow and
 automatic publishing to the construct catalog.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk8s
 
 __Extends__: [cdk.ConstructLibrary](#projen-cdk-constructlibrary)
@@ -6426,6 +6489,7 @@ Name | Type | Description
 
 CDK8S integration test.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk8s
 
 __Extends__: [cdk.IntegrationTestBase](#projen-cdk-integrationtestbase)
@@ -6452,6 +6516,7 @@ new cdk8s.IntegrationTest(project: Project, options: IntegrationTestOptions)
 
 Discovers and creates integration tests from files in the test root.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdk8s
 
 __Extends__: [cdk.IntegrationTestAutoDiscoverBase](#projen-cdk-integrationtestautodiscoverbase)
@@ -6481,6 +6546,7 @@ A multi-language (jsii) construct library which vends constructs designed to
 use within the CDK for Terraform (CDKTF), with a friendly workflow and
 automatic publishing to the construct catalog.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: cdktf
 
 __Extends__: [cdk.ConstructLibrary](#projen-cdk-constructlibrary)
@@ -6662,6 +6728,7 @@ new cdktf.ConstructLibraryCdktf(options: ConstructLibraryCdktfOptions)
 
 Circleci Class to manage `.circleci/config.yml`. Check projen's docs for more information.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: circleci
 
 __Extends__: [Component](#projen-component)
@@ -6734,6 +6801,7 @@ addWorkflow(workflow: Workflow): void
 
 Auto approve pull requests that meet a criteria.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [Component](#projen-component)
@@ -6776,6 +6844,7 @@ to succeed in order for the PR to be merged.
 `approvedReviews` specified the number of code review approvals required for
 the PR to be merged.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [Component](#projen-component)
@@ -6834,6 +6903,7 @@ Since module versions are managed in projen, the versioning strategy will be
 configured to "lockfile-only" which means that only updates that can be done
 on the lockfile itself will be proposed.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [Component](#projen-component)
@@ -6907,6 +6977,7 @@ addIgnore(dependencyName: string, ...versions: string[]): void
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [Component](#projen-component)
@@ -7088,6 +7159,7 @@ set(action: string, override: string): void
 
 GitHub-based project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [Project](#projen-project)
@@ -7232,6 +7304,7 @@ Workflow for GitHub.
 
 A workflow is a configurable automated process made up of one or more jobs.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [Component](#projen-component)
@@ -7401,6 +7474,7 @@ updateJobs(jobs: Map<string, JobCallingReusableWorkflow &#124; Job>): void
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [Component](#projen-component)
@@ -7464,6 +7538,7 @@ Configure validations to run on GitHub pull requests.
 
 Only generates a file if at least one linter is configured.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [Component](#projen-component)
@@ -7508,6 +7583,7 @@ preSynthesize(): void
 
 Template for GitHub pull requests.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [TextFile](#projen-textfile)
@@ -7554,6 +7630,7 @@ The default configuration will:
  * Add a "Stale" label to issues after 60 days and closed after 7 days
  * If a comment is added, the label will be removed and timer is restarted.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [Component](#projen-component)
@@ -7581,6 +7658,7 @@ new github.Stale(github: GitHub, options?: StaleOptions)
 
 A GitHub workflow for common build tasks within a project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: github
 
 __Extends__: [github.GithubWorkflow](#projen-github-githubworkflow)
@@ -7786,6 +7864,7 @@ CI for GitLab.
 
 A CI is a configurable automated process made up of one or more stages/jobs.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: gitlab
 
 __Extends__: [Component](#projen-component)
@@ -7920,6 +7999,7 @@ addStages(...stages: string[]): void
 
 A GitLab CI for the main `.gitlab-ci.yml` file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: gitlab
 
 __Extends__: [gitlab.CiConfiguration](#projen-gitlab-ciconfiguration)
@@ -7977,6 +8057,7 @@ createNestedTemplates(config: Map<string, CiConfigurationOptions>): void
 
 A GitLab CI for templates that are created and included in the `.gitlab-ci.yml` file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: gitlab
 
 __Extends__: [gitlab.CiConfiguration](#projen-gitlab-ciconfiguration)
@@ -8016,6 +8097,7 @@ Name | Type | Description
 
 Java project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: java
 
 __Extends__: [github.GitHubProject](#projen-github-githubproject)
@@ -8145,6 +8227,7 @@ addTestDependency(spec: string): void
 
 Implements JUnit-based testing.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: java
 
 __Extends__: [Component](#projen-component)
@@ -8171,6 +8254,7 @@ new java.Junit(project: Project, options: JunitOptions)
 
 Adds the maven-compiler plugin to a POM file and the `compile` task.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: java
 
 __Extends__: [Component](#projen-component)
@@ -8197,6 +8281,7 @@ new java.MavenCompile(project: Project, pom: Pom, options?: MavenCompileOptions)
 
 Configures a maven project to produce a .jar archive with sources and javadocs.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: java
 
 __Extends__: [Component](#projen-component)
@@ -8233,6 +8318,7 @@ Name | Type | Description
 
 Java code sample.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: java
 
 __Extends__: [Component](#projen-component)
@@ -8261,6 +8347,7 @@ It is
 an XML file that contains information about the project and configuration
 details used by Maven to build the project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: java
 
 __Extends__: [Component](#projen-component)
@@ -8388,6 +8475,7 @@ This will install `org.projen/projen` as a Maven dependency and will add a
 `synth` task which will compile & execute `main()` from
 `src/main/java/projenrc.java`.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: java
 
 __Extends__: [ProjenrcFile](#projen-projenrcfile)
@@ -8426,6 +8514,7 @@ Adds support for bundling JavaScript applications and dependencies into a single
 
 In the future, this will also supports bundling websites.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [Component](#projen-component)
@@ -8502,6 +8591,7 @@ __Returns__:
 
 Represents eslint configuration.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [Component](#projen-component)
@@ -8663,6 +8753,7 @@ Installs the following npm scripts:.
 - `test:watch`, intended for automatically rerunning tests when files change.
 - `test:update`, intended for testing locally and updating snapshots to match the latest unit under test. Only available when `updateSnapshot: UpdateSnapshot: NEVER`.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [Component](#projen-component)
@@ -8835,6 +8926,7 @@ new javascript.JestReporter(name: string, options?: Map<string, any>)
 
 Represents the npm `package.json` file.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [Component](#projen-component)
@@ -9143,6 +9235,7 @@ __Returns__:
 
 Node.js project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [github.GitHubProject](#projen-github-githubproject)
@@ -9545,6 +9638,7 @@ setScript(name: string, command: string): void
 
 File representing the local NPM config in .npmrc.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [Component](#projen-component)
@@ -9601,6 +9695,7 @@ addRegistry(url: string, scope?: string): void
 
 Represents prettier configuration.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [Component](#projen-component)
@@ -9696,6 +9791,7 @@ __Returns__:
 
 Sets up a javascript project to use TypeScript for projenrc.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [ProjenrcFile](#projen-projenrcfile)
@@ -9765,6 +9861,7 @@ new javascript.Transform(name: string, options?: any)
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [Component](#projen-component)
@@ -9923,6 +10020,7 @@ __Returns__:
 
 Upgrade node project dependencies.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: javascript
 
 __Extends__: [Component](#projen-component)
@@ -10054,7 +10152,7 @@ new javascript.WatchPlugin(name: string, options?: any)
 
 Manages dependencies using a requirements.txt file and the pip CLI tool.
 
-__Implements__: [python.IPythonDeps](#projen-python-ipythondeps)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [python.IPythonDeps](#projen-python-ipythondeps)
 __Submodule__: python
 
 __Extends__: [Component](#projen-component)
@@ -10127,7 +10225,7 @@ installDependencies(): void
 
 Manage project dependencies, virtual environments, and packaging through the poetry CLI tool.
 
-__Implements__: [python.IPythonDeps](#projen-python-ipythondeps), [python.IPythonEnv](#projen-python-ipythonenv), [python.IPythonPackaging](#projen-python-ipythonpackaging)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [python.IPythonDeps](#projen-python-ipythondeps), [python.IPythonEnv](#projen-python-ipythonenv), [python.IPythonPackaging](#projen-python-ipythonpackaging)
 __Submodule__: python
 
 __Extends__: [Component](#projen-component)
@@ -10224,6 +10322,7 @@ setupEnvironment(): void
 
 Represents configuration of a pyproject.toml file for a Poetry project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: python
 
 __Extends__: [Component](#projen-component)
@@ -10280,6 +10379,7 @@ Allows writing projenrc files in python.
 This will install `projen` as a Python dependency and will add a
 `synth` task which will run `.projenrc.py`.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: python
 
 __Extends__: [ProjenrcFile](#projen-projenrcfile)
@@ -10315,6 +10415,7 @@ Name | Type | Description
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: python
 
 __Extends__: [Component](#projen-component)
@@ -10349,6 +10450,7 @@ Name | Type | Description
 
 Python test code sample.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: python
 
 __Extends__: [Component](#projen-component)
@@ -10374,6 +10476,7 @@ new python.PytestSample(project: Project, options: PytestSampleOptions)
 
 Python project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: python
 
 __Extends__: [github.GitHubProject](#projen-github-githubproject)
@@ -10509,6 +10612,7 @@ postSynthesize(): void
 
 Python code sample.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: python
 
 __Extends__: [Component](#projen-component)
@@ -10533,6 +10637,7 @@ new python.PythonSample(project: Project, options: PythonSampleOptions)
 
 Specifies a list of packages to be installed using pip.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: python
 
 __Extends__: [FileBase](#projen-filebase)
@@ -10589,6 +10694,7 @@ __Returns__:
 
 Python packaging script where package metadata can be placed.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: python
 
 __Extends__: [FileBase](#projen-filebase)
@@ -10638,7 +10744,7 @@ __Returns__:
 
 Manages packaging through setuptools with a setup.py script.
 
-__Implements__: [python.IPythonPackaging](#projen-python-ipythonpackaging)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [python.IPythonPackaging](#projen-python-ipythonpackaging)
 __Submodule__: python
 
 __Extends__: [Component](#projen-component)
@@ -10681,7 +10787,7 @@ Name | Type | Description
 
 Manages a virtual environment through the Python venv module.
 
-__Implements__: [python.IPythonEnv](#projen-python-ipythonenv)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [python.IPythonEnv](#projen-python-ipythonenv)
 __Submodule__: python
 
 __Extends__: [Component](#projen-component)
@@ -10724,6 +10830,7 @@ Implements GitHub jobs for publishing modules to package managers.
 
 Under the hood, it uses https://github.com/aws/publib
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: release
 
 __Extends__: [Component](#projen-component)
@@ -10969,6 +11076,7 @@ Manages releases (currently through GitHub workflows).
 
 By default, no branches are released. To add branches, call `addBranch()`.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: release
 
 __Extends__: [Component](#projen-component)
@@ -11183,6 +11291,7 @@ __Returns__:
 
 Sets up a typescript project to use TypeScript for projenrc.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: typescript
 
 __Extends__: [ProjenrcFile](#projen-projenrcfile)
@@ -11237,6 +11346,7 @@ and has no expectations around the project's main language.
 
 Requires that `npx` is available.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: typescript
 
 __Extends__: [ProjenrcFile](#projen-projenrcfile)
@@ -11287,6 +11397,7 @@ preSynthesize(): void
 
 TypeScript app.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: typescript
 
 __Extends__: [typescript.TypeScriptProject](#projen-typescript-typescriptproject)
@@ -11449,6 +11560,7 @@ new typescript.TypeScriptAppProject(options: TypeScriptProjectOptions)
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: typescript
 
 __Extends__: [typescript.TypeScriptProject](#projen-typescript-typescriptproject)
@@ -11611,6 +11723,7 @@ new typescript.TypeScriptLibraryProject(options: TypeScriptProjectOptions)
 
 TypeScript project.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: typescript
 
 __Extends__: [javascript.NodeProject](#projen-javascript-nodeproject)
@@ -11814,7 +11927,7 @@ A development environment running VSCode in a container;
 used by GitHub
 codespaces.
 
-__Implements__: [vscode.IDevContainerEnvironment](#projen-vscode-idevcontainerenvironment), [IDevEnvironment](#projen-idevenvironment)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [vscode.IDevContainerEnvironment](#projen-vscode-idevcontainerenvironment), [IDevEnvironment](#projen-idevenvironment)
 __Submodule__: vscode
 
 __Extends__: [Component](#projen-component)
@@ -11923,6 +12036,7 @@ addVscodeExtensions(...extensions: string[]): void
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: vscode
 
 __Extends__: [Component](#projen-component)
@@ -11955,6 +12069,7 @@ Name | Type | Description
 
 VSCode launch configuration file (launch.json), useful for enabling in-editor debugger.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: vscode
 
 __Extends__: [Component](#projen-component)
@@ -12016,6 +12131,7 @@ addConfiguration(cfg: VsCodeLaunchConfigurationEntry): void
 
 VS Code Workspace recommended extensions Source: https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: vscode
 
 __Extends__: [Component](#projen-component)
@@ -12069,6 +12185,7 @@ addUnwantedRecommendations(...extensions: string[]): void
 
 VS Code Workspace settings Source: https://code.visualstudio.com/docs/getstarted/settings#_workspace-settings.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: vscode
 
 __Extends__: [Component](#projen-component)
@@ -12123,6 +12240,7 @@ addSettings(settings: Map<string, any>, languages?: string &#124; Array<string>)
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: web
 
 __Extends__: [Component](#projen-component)
@@ -12148,6 +12266,7 @@ new web.NextComponent(project: NodeProject, options: NextComponentOptions)
 
 Next.js project without TypeScript.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: web
 
 __Extends__: [javascript.NodeProject](#projen-javascript-nodeproject)
@@ -12307,6 +12426,7 @@ Name | Type | Description
 
 Next.js project with TypeScript.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: web
 
 __Extends__: [typescript.TypeScriptAppProject](#projen-typescript-typescriptappproject)
@@ -12516,6 +12636,7 @@ Name | Type | Description
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: web
 
 __Extends__: [Component](#projen-component)
@@ -12541,6 +12662,7 @@ new web.ReactComponent(project: NodeProject, options: ReactComponentOptions)
 
 React project without TypeScript.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: web
 
 __Extends__: [javascript.NodeProject](#projen-javascript-nodeproject)
@@ -12697,6 +12819,7 @@ Name | Type | Description
 
 
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: web
 
 __Extends__: [FileBase](#projen-filebase)
@@ -12742,6 +12865,7 @@ __Returns__:
 
 React project with TypeScript.
 
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
 __Submodule__: web
 
 __Extends__: [typescript.TypeScriptAppProject](#projen-typescript-typescriptappproject)

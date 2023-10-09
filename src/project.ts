@@ -1,6 +1,7 @@
 import { mkdtempSync, realpathSync, renameSync } from "fs";
 import { tmpdir } from "os";
 import * as path from "path";
+import { Construct } from "constructs";
 import * as glob from "glob";
 import { cleanup, FILE_MANIFEST } from "./cleanup";
 import { IS_TEST_RUN, PROJEN_VERSION } from "./common";
@@ -128,7 +129,7 @@ export interface GitOptions {
 /**
  * Base project
  */
-export class Project {
+export class Project extends Construct {
   /**
    * The name of the default task (the task executed when `projen` is run without arguments). Normally
    * this task should synthesize the project files.
@@ -223,6 +224,13 @@ export class Project {
   private readonly _ejected: boolean;
 
   constructor(options: ProjectOptions) {
+    super(
+      options.parent as any,
+      `${new.target.name}#${options.name}@${options.outdir || "<rootDir>"}`
+    );
+    this.node.addMetadata("type", "project");
+    this.node.addMetadata("construct", new.target.name);
+
     this.initProject = resolveInitProject(options);
 
     this.name = options.name;
@@ -479,7 +487,9 @@ export class Project {
     );
 
     if (index !== -1) {
-      return this._components.splice(index, 1)[0] as FileBase;
+      const file = this._components.splice(index, 1)[0] as FileBase;
+      this.node.tryRemoveChild(file.node.id);
+      return file;
     }
 
     for (const child of this._subprojects) {

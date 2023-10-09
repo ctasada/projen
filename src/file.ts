@@ -89,7 +89,18 @@ export abstract class FileBase extends Component {
     filePath: string,
     options: FileBaseOptions = {}
   ) {
-    super(project);
+    super(
+      project,
+      `${new.target.name}@${path.relative(
+        project.root.outdir,
+        path.join(project.outdir, filePath)
+      )}`
+    );
+    this.node.addMetadata("type", "file");
+    this.node.addMetadata(
+      "path",
+      path.relative(project.root.outdir, path.join(project.outdir, filePath))
+    );
 
     this.readonly = !project.ejected && (options.readonly ?? true);
     this.executable = options.executable ?? false;

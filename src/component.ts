@@ -1,10 +1,19 @@
+import { Construct } from "constructs";
 import { Project } from "./project";
+
+let currentId = 0;
+const componentId = () => {
+  return ++currentId;
+};
 
 /**
  * Represents a project component.
  */
-export class Component {
-  constructor(public readonly project: Project) {
+export class Component extends Construct {
+  constructor(public readonly project: Project, id?: string) {
+    super(project, id || `${new.target.name}#${componentId()}`);
+    this.node.addMetadata("type", "component");
+    this.node.addMetadata("construct", new.target.name);
     project._addComponent(this);
   }
 

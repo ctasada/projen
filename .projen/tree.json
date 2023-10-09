@@ -1,0 +1,283 @@
+{
+  "constructs": {
+    "JsiiProject#projen@<rootDir>": {
+      "type": "project",
+      "construct": "JsiiProject"
+    },
+    "GitAttributesFile@.gitattributes": {
+      "type": "file",
+      "construct": "GitAttributesFile",
+      "path": ".gitattributes"
+    },
+    "IgnoreFile@.gitignore": {
+      "type": "file",
+      "construct": "IgnoreFile",
+      "path": ".gitignore"
+    },
+    "Tasks#1": {
+      "type": "component",
+      "construct": "Tasks"
+    },
+    "JsonFile@.projen--tasks.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": ".projen/tasks.json"
+    },
+    "ProjectBuild#2": {
+      "type": "component",
+      "construct": "ProjectBuild"
+    },
+    "Dependencies#3": {
+      "type": "component",
+      "construct": "Dependencies"
+    },
+    "JsonFile@.projen--deps.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": ".projen/deps.json"
+    },
+    "Logger#4": {
+      "type": "component",
+      "construct": "Logger"
+    },
+    "JsonFile@.projen--files.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": ".projen/files.json"
+    },
+    "GitHub#5": {
+      "type": "component",
+      "construct": "GitHub"
+    },
+    "Mergify#6": {
+      "type": "component",
+      "construct": "Mergify"
+    },
+    "PullRequestLint#7": {
+      "type": "component",
+      "construct": "PullRequestLint"
+    },
+    "GithubWorkflow#pull-request-lint": {
+      "type": "component",
+      "construct": "GithubWorkflow"
+    },
+    "YamlFile@.github--workflows--pull-request-lint.yml": {
+      "type": "file",
+      "construct": "YamlFile",
+      "path": ".github/workflows/pull-request-lint.yml"
+    },
+    "VsCode#8": {
+      "type": "component",
+      "construct": "VsCode"
+    },
+    "Gitpod#9": {
+      "type": "component",
+      "construct": "Gitpod"
+    },
+    "YamlFile@.gitpod.yml": {
+      "type": "file",
+      "construct": "YamlFile",
+      "path": ".gitpod.yml"
+    },
+    "DevContainer#10": {
+      "type": "component",
+      "construct": "DevContainer"
+    },
+    "JsonFile@.devcontainer.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": ".devcontainer.json"
+    },
+    "Clobber#11": {
+      "type": "component",
+      "construct": "Clobber"
+    },
+    "SampleReadme#12": {
+      "type": "component",
+      "construct": "SampleReadme"
+    },
+    "AutoApprove#13": {
+      "type": "component",
+      "construct": "AutoApprove"
+    },
+    "GithubWorkflow#auto-approve": {
+      "type": "component",
+      "construct": "GithubWorkflow"
+    },
+    "YamlFile@.github--workflows--auto-approve.yml": {
+      "type": "file",
+      "construct": "YamlFile",
+      "path": ".github/workflows/auto-approve.yml"
+    },
+    "NodePackage#14": {
+      "type": "component",
+      "construct": "NodePackage"
+    },
+    "JsonFile@package.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": "package.json"
+    },
+    "License@LICENSE": {
+      "type": "file",
+      "construct": "License",
+      "path": "LICENSE"
+    },
+    "IgnoreFile@.npmignore": {
+      "type": "file",
+      "construct": "IgnoreFile",
+      "path": ".npmignore"
+    },
+    "Jest#15": {
+      "type": "component",
+      "construct": "Jest"
+    },
+    "BuildWorkflow#16": {
+      "type": "component",
+      "construct": "BuildWorkflow"
+    },
+    "GithubWorkflow#build": {
+      "type": "component",
+      "construct": "GithubWorkflow"
+    },
+    "YamlFile@.github--workflows--build.yml": {
+      "type": "file",
+      "construct": "YamlFile",
+      "path": ".github/workflows/build.yml"
+    },
+    "Release#17": {
+      "type": "component",
+      "construct": "Release"
+    },
+    "Version#18": {
+      "type": "component",
+      "construct": "Version"
+    },
+    "Publisher#19": {
+      "type": "component",
+      "construct": "Publisher"
+    },
+    "TaskWorkflow#release": {
+      "type": "component",
+      "construct": "TaskWorkflow"
+    },
+    "YamlFile@.github--workflows--release.yml": {
+      "type": "file",
+      "construct": "YamlFile",
+      "path": ".github/workflows/release.yml"
+    },
+    "AutoMerge#20": {
+      "type": "component",
+      "construct": "AutoMerge"
+    },
+    "YamlFile@.mergify.yml": {
+      "type": "file",
+      "construct": "YamlFile",
+      "path": ".mergify.yml"
+    },
+    "UpgradeDependencies#21": {
+      "type": "component",
+      "construct": "UpgradeDependencies"
+    },
+    "GithubWorkflow#upgrade-main": {
+      "type": "component",
+      "construct": "GithubWorkflow"
+    },
+    "YamlFile@.github--workflows--upgrade-main.yml": {
+      "type": "file",
+      "construct": "YamlFile",
+      "path": ".github/workflows/upgrade-main.yml"
+    },
+    "PullRequestTemplate@.github--pull_request_template.md": {
+      "type": "file",
+      "construct": "PullRequestTemplate",
+      "path": ".github/pull_request_template.md"
+    },
+    "Projenrc#22": {
+      "type": "component",
+      "construct": "Projenrc"
+    },
+    "Bundler#23": {
+      "type": "component",
+      "construct": "Bundler"
+    },
+    "Prettier#24": {
+      "type": "component",
+      "construct": "Prettier"
+    },
+    "IgnoreFile@.prettierignore": {
+      "type": "file",
+      "construct": "IgnoreFile",
+      "path": ".prettierignore"
+    },
+    "JsonFile@.prettierrc.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": ".prettierrc.json"
+    },
+    "NpmConfig#25": {
+      "type": "component",
+      "construct": "NpmConfig"
+    },
+    "IniFile@.npmrc": {
+      "type": "file",
+      "construct": "IniFile",
+      "path": ".npmrc"
+    },
+    "TypescriptConfig#26": {
+      "type": "component",
+      "construct": "TypescriptConfig"
+    },
+    "JsonFile@tsconfig.dev.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": "tsconfig.dev.json"
+    },
+    "Eslint#27": {
+      "type": "component",
+      "construct": "Eslint"
+    },
+    "JsonFile@.eslintrc.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": ".eslintrc.json"
+    },
+    "SampleCode#28": {
+      "type": "component",
+      "construct": "SampleCode"
+    },
+    "SampleDir#29": {
+      "type": "component",
+      "construct": "SampleDir"
+    },
+    "SampleDir#30": {
+      "type": "component",
+      "construct": "SampleDir"
+    },
+    "TextFile@projen.bash": {
+      "type": "file",
+      "construct": "TextFile",
+      "path": "projen.bash"
+    },
+    "JsonFile@.markdownlint.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": ".markdownlint.json"
+    },
+    "VsCodeLaunchConfig#31": {
+      "type": "component",
+      "construct": "VsCodeLaunchConfig"
+    },
+    "JsonFile@.vscode--launch.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": ".vscode/launch.json"
+    },
+    "JsonFile@.projen--tree.json": {
+      "type": "file",
+      "construct": "JsonFile",
+      "path": ".projen/tree.json"
+    }
+  },
+  "//": "~~ Generated by projen. To modify, edit .projenrc.js and run \"/bin/bash ./projen.bash\"."
+}
